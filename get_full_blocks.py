@@ -32,7 +32,7 @@ def get_fullblocks(version):
 				parent = model["parent"]
 				if parent.startswith("minecraft:"): # I have to do this check because Minecraft is inconsistent with using its own namespace as prefix.
 					parent = parent[10:]
-				if parent == "block/cube":
+				if parent.startswith("block/cube"):
 					fullblocks += [filename[:-5]]
 					break
 				else:
